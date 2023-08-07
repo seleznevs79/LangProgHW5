@@ -60,22 +60,20 @@ int[] array = GetArray(8, 0, 100);
  Console.WriteLine($"[{String.Join(",", array)}]");
 
 int max = array[0];
-// int min = array[0];
-// int diff = 0;
+int min = array[0];
 
- for (int i = 1; i < array.Length; i= i++){
-  
+ for (int i = 1; i < array.Length; i++){
     if (array[i] > max ){
         max = array[i];
     }
-//    if (array[i] < min ){
-//         min=array[i];
-//     }
-   
+   if (array[i] < min ){
+        min = array[i];
+    }
  }
-// diff = max;
-
- Console.WriteLine($"Разница между максимальным и минимальным элементом = {max}");
+int diff = max - min;
+Console.WriteLine($"Максимальный элемент = {max}");
+Console.WriteLine($"Минимальный элемент = {min}");
+ Console.WriteLine($"Разница между максимальным и минимальным элементом = {diff}");
 
 // Общий метод для создания одномерного массива
 int[] GetArray(int size, int minValue, int maxValue){
